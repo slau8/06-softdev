@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your future awaits</title>
+  </head>
+  <body>
+    <h1>Discover your future</h1>
+    <form method="GET" action="/welcome">
+      <p style="color:red"> {{ error }} </p>
+      Name: <input type="text" name="name" value="Shannon" required>
+      <br>
+      Travel to the year of: <input type="text" name="year" value="2018" required>
+      <br>
+      <input type="submit" name="submit" value="Go!">
+  </body>
