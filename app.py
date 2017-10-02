@@ -10,6 +10,8 @@ def form():
 # Displays welcome page
 @app.route('/welcome', methods=["POST","GET"])
 def welcome():
+    # Diagnostic print statements
+    comment()
     # Obtain form values
     form_dict = request.args
     name = form_dict['name']
@@ -19,6 +21,14 @@ def welcome():
     if not year.isdigit() or name.isdigit():
         return render_template('form.html',error="Invalid name or year")
     age = int(year) - 2000
+    method = request.method
+    return render_template('welcome.html',
+                            NAME = name,
+                            YEAR = year,
+                            AGE = age,
+                            METHOD = method)
+
+def comment():
     # Diagnostic print statements
     print "\n\n\n\n"
     print "Print app:"
@@ -31,11 +41,6 @@ def welcome():
     print request.args
     #print "Print request.form:"
     #print request.form
-
-    return render_template('welcome.html',
-                            NAME = name,
-                            YEAR = year,
-                            AGE = age)
 
 
 if __name__ == "__main__":
