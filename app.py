@@ -1,3 +1,10 @@
+'''
+Shannon Lau
+SoftDev1 pd7
+HW #06: Echo Echo Echo
+2017-10-2
+'''
+
 from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
@@ -28,8 +35,9 @@ def welcome():
                             AGE = age,
                             METHOD = method)
 
+
+# Diagnostic print statements
 def comment():
-    # Diagnostic print statements
     print "\n\n\n\n"
     print "Print app:"
     print app
