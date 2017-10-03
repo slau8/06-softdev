@@ -26,7 +26,7 @@ def welcome():
     # Check values
     # If invalid, render 'form.html' with error message
     if not year.isdigit() or name.isdigit():
-        return render_template('form.html',error="Invalid name or year")
+        return render_template('form.html',error="Invalid name or year.")
     age = int(year) - 2000
     method = request.method
     return render_template('welcome.html',
